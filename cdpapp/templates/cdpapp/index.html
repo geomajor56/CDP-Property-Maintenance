@@ -1,0 +1,18 @@
+{% extends "cdpapp/base.html" %}
+{% block title %} CDP Maintenance {% endblock %}
+
+{% block sidebar %}
+    {% if buildings %}
+        <ul class="list-group">
+            {% for buildings in buildings %}
+                <li class="list-group-item"><a href="{% url 'building_detail' buildings.id %}">{{ buildings.property_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>no buildings yet</p>
+    {% endif %}
+{% endblock sidebar %}
+{% block content %}
+
+{% endblock content %}

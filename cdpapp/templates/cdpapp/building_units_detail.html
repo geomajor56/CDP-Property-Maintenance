@@ -1,0 +1,83 @@
+{% extends "cdpapp/base_no_side_panel.html" %}
+{% block title %}Unit  Detail{% endblock %}
+
+{% block sidebar %}
+    {#<h3>name</h3>{{ maint_building_id }}#}
+{% endblock sidebar %}
+
+{% block content %}
+    {#    <h3>building_units_detail.html</h3>#}
+    <div class="page-header">
+        <h3>{{ units.property_name }}&nbsp;
+            <small>Unit:&nbsp;{{ units.unit }}</small>
+        </h3>
+    </div>
+    <h2></h2>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Unit Details</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Bedrooms:</strong>&NonBreakingSpace; {{ units.bedrooms }}
+                    <strong>Bathrooms:</strong>&NonBreakingSpace; {{ units.bathrooms }}
+                    <strong>Comments:</strong>&NonBreakingSpace; {{ units.unit_comments }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Tenant Details</div>
+        <div class="panel-group" id="accordion">
+
+           {% for tenants in units.tenant_set.all %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#{{ tenants.id }}">
+                            {{ tenants.first_name }}&nbsp;{{ tenants.last_name }}</a>&nbsp;&nbsp;
+                        <strong>Primary Phone:</strong>&NonBreakingSpace; {{ tenants.primary_phone }}&nbsp;
+                        <strong>Email:</strong>&NonBreakingSpace; {{ tenants.email }}&nbsp;
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Unit Work Orders</div>
+        <div class="panel-body">
+            <div>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Property</th>
+                        <th>Unit</th>
+                        <th>Work Order</th>
+                        <th>Date Called</th>
+                        <th>Caller</th>
+                        <th>Description</th>
+                    </tr>
+                    {% for workorders in units.workorder_set.all %}
+                        <tr>
+                            <td>{{ workorders.building }}</td>
+                            <td>{{ workorders.unit }}</td>
+                            <td>{{ workorders.ordernum }}</td>
+                            <td>{{ workorders.call_date }}</td>
+                            <td>{{ workorders.request_by }}</td>
+                            <td>{{ workorders.problem_desc |truncatewords:6 }}</td>
+{#                            <td><a href="{% url 'workorder_update' workorder.pk %}">#}
+{#                                <button type="button" class="btn btn-sm btn-success">Edit</button>#}
+{#                            </a></td>#}
+{#                            <td>#}
+{#                                <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">#}
+{#                                    {% csrf_token %}#}
+{#                                    <input type="submit" class="btn btn-sm btn-danger" value="delete"></input>#}
+{#                                </form>#}
+{#                            </td>#}
+                        </tr>
+                    {% endfor %}
+                </table>
+{#                                {% include "maintapp/unit_workorders.html" %}#}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
