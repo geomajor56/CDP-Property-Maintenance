@@ -30,7 +30,7 @@
         <div class="panel-heading">Tenant Details</div>
         <div class="panel-group" id="accordion">
 
-           {% for tenants in units.tenant_set.all %}
+            {% for tenants in units.tenant_set.all %}
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#{{ tenants.id }}">
@@ -48,36 +48,32 @@
             <div>
                 <table class="table table-striped">
                     <tr>
-                        <th>Property</th>
-                        <th>Unit</th>
                         <th>Work Order</th>
                         <th>Date Called</th>
                         <th>Caller</th>
                         <th>Description</th>
+                        <th>Completed</th>
                     </tr>
                     {% for workorders in units.workorder_set.all %}
                         <tr>
-                            <td>{{ workorders.building }}</td>
-                            <td>{{ workorders.unit }}</td>
-                            <td>{{ workorders.ordernum }}</td>
+                            <td><a href="{% url 'workorder_update' workorders.ordernum %}">{{ workorders.ordernum }}</a>
+                            </td>
                             <td>{{ workorders.call_date }}</td>
                             <td>{{ workorders.request_by }}</td>
-                            <td>{{ workorders.problem_desc |truncatewords:6 }}</td>
-{#                            <td><a href="{% url 'workorder_update' workorder.pk %}">#}
-{#                                <button type="button" class="btn btn-sm btn-success">Edit</button>#}
-{#                            </a></td>#}
-{#                            <td>#}
-{#                                <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">#}
-{#                                    {% csrf_token %}#}
-{#                                    <input type="submit" class="btn btn-sm btn-danger" value="delete"></input>#}
-{#                                </form>#}
-{#                            </td>#}
+                            <td>{{ workorders.problem_desc |truncatewords:12 }}</td>
+                            <td>{{ workorders.completed }}</td>
                         </tr>
+
                     {% endfor %}
+
                 </table>
-{#                                {% include "maintapp/unit_workorders.html" %}#}
+
             </div>
         </div>
+        {#        <div class="panel-footer"><p><a href="{% url 'workorder_add' %}">Create a new Work Order</a></p></div>#}
+        <div class="panel-footer"><p><a href="{% url 'workorder_add' %}?next={% url 'building_unit_detail' object.pk %}">
+            Add workorder
+        </a></p></div>
     </div>
 {% endblock content %}
 

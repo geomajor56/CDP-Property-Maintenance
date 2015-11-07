@@ -1,0 +1,21 @@
+{% extends "cdpapp/base_no_side_panel.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+
+{#{% block content %}#}
+{#    <form method="POST"> {% csrf_token %}#}
+{#        {% crispy form %}#}
+{#        <input class="btn btn-primary" type="submit" value="Submit">#}
+{#    </form>#}
+{##}
+{##}
+{#{% endblock content %}#}
+
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-danger" type="submit" value="Submit">
+</form>
+{% endblock content %}

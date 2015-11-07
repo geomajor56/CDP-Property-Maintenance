@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="767497190">
-    <data-source source="LOCAL" name="Django default" uuid="b02c6da3-96b0-4301-b3be-a6b535170b25">
-      <driver-ref>9fca44bc-fa9b-44b6-b439-843ab8301f88</driver-ref>
+  <component name="DataSourceManagerImpl" format="xml" hash="927034451">
+    <data-source source="LOCAL" name="PostgreSQL - cdp@localhost" uuid="5f7b9cfd-33c2-4a0f-843d-5cd20a0e6d29">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/cdp</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="7dc35111-f198-4505-b084-ce37a01cdf88">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/cdpsite/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/cdp</jdbc-url>
+      <explain-plan-config>
+        <provider>com.intellij.database.plan.ExplainPlanProvider.NullExplainPlanProvider</provider>
+      </explain-plan-config>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/postgresql-9.4-1201.jdbc4.jar</url>
@@ -14,12 +25,6 @@
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/postgresql-driver-license.txt</url>
         </library>
       </libraries>
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - cdp@localhost" uuid="5f7b9cfd-33c2-4a0f-843d-5cd20a0e6d29">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/cdp</jdbc-url>
     </data-source>
   </component>
 </project>
