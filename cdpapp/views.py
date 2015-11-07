@@ -41,7 +41,7 @@ class CreateWorkOrder(CreateView):
         return kwargs
 
     def form_valid(self, form):
-        redirect = self.cleaned_data.get('next')
+        redirect = form.cleaned_data.get('next')
         if redirect:
             self.success_url = redirect
         return super(CreateWorkOrder, self).form_valid(form)
