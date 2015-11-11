@@ -84,26 +84,17 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'cdpmaint$maint',
+#         'NAME': 'cdpmaint$cdp',
 #         'USER': 'cdpmaint',
-#         'PASSWORD': 'DB_PASSWORD',
-# 'HOST': 'cdpmaint.mysql.pythonanywhere-services.com',
-# 'PORT': '3306',
+#         'PASSWORD': 'huskies1975',
+#         'HOST': 'cdpmaint.mysql.pythonanywhere-services.com',
+#         'PORT': '3306',
+#     }
 # }
-# }
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
