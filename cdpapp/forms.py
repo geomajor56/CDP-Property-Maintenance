@@ -9,7 +9,9 @@ class WorkOrderForm(forms.ModelForm):
 
     class Meta:
         model = WorkOrder
+
         fields = ['building', 'unit', 'ordernum', 'call_date', 'request_by', 'problem_desc']
+
 
 
 

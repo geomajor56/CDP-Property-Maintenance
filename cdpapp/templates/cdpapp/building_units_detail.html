@@ -1,9 +1,7 @@
 {% extends "cdpapp/base_no_side_panel.html" %}
 {% block title %}Unit  Detail{% endblock %}
 
-{% block sidebar %}
-    {#<h3>name</h3>{{ maint_building_id }}#}
-{% endblock sidebar %}
+
 
 {% block content %}
     {#    <h3>building_units_detail.html</h3>#}
@@ -46,7 +44,7 @@
         <div class="panel-heading">Unit Work Orders</div>
         <div class="panel-body">
             <div>
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered table-hover table-condensed">
                     <tr>
                         <th>Work Order</th>
                         <th>Date Called</th>

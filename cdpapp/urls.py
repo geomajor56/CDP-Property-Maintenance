@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
-from cdpapp.views import BuildingList, BuildingDetail, BuildingUnitDetail, CreateWorkOrder, EditWorkOrder, DeleteWorkOrder
+from cdpapp.views import BuildingList, BuildingDetail, BuildingUnitDetail, CreateWorkOrder, EditWorkOrder,\
+    DeleteWorkOrder, list_all_workorders
 
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     url(r'^workorder/add/$', CreateWorkOrder.as_view(), name='workorder_add'),
     url(r'^workorder/(?P<pk>\d+)/$', EditWorkOrder.as_view(), name='workorder_update'),
     url(r'^workorder/(?P<pk>\d+)/delete/$', DeleteWorkOrder.as_view(), name='workorder_delete'),
+    url(r'^workorder/all/$', list_all_workorders, name='list_all_workorders'),
 ]

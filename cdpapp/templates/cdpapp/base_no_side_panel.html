@@ -1,14 +1,17 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
     <title>CDP Maintenance | {% block title %}Homepage{% endblock %}</title>
 
-    {% block css %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css">
-{#        <link rel="stylesheet" href="{% static "css/maintapp.css" %}">#}
 
+
+    {% block css %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css">
+        {#        <link rel="stylesheet" href="{% static "css/maintapp.css" %}">#}
+        <link rel="stylesheet" href="/static/django_tables2/themes/paleblue/css/screen.css"/>
     {% endblock css %}
 
     {% block javascript %}
@@ -19,7 +22,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     {% endblock javascript %}
-    {{ form.media }}
+{#    {{ form.media }}#}
 
 </head>
 <body>
@@ -43,7 +46,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="/tenants/all/">Tenants</a></li>
                 <li><a href="/unit/">Units</a></li>
-                <li><a href="/workorder/">Work Orders</a></li>
+                {#                <li><a href="/workorder/all">Work Orders</a></li>#}
+                <li><a href="{% url 'list_all_workorders' %}">Work Orders</a>
+
                 <li><a href="http://127.0.0.1:8000/admin/">Admin</a></li>
 
             </ul>
@@ -51,26 +56,16 @@
     </nav>
 </div>
 <div class="container">
-    <div class="row">
-{#        <div class="col-md-3">#}
-{#            {% block sidebar %}#}
-{#                From then on, you can insert the current value of the cycle wherever you’d like in your template by#}
-{#                referencing the cycle name as a context variable. If you want to move the cycle to the next value#}
-{#                independently of the original cycle tag, you can use another cycle tag and specify the name of the#}
-{#                variable. So, the following template:#}
-{#            {% endblock sidebar %}#}
-{#        </div>#}
-        <div class="col-md-12">
-            <div id="content">
-                {% block content %}
+    <div class="col-md-12">
+        <div id="content">
+            {% block content %}
 
-                {% endblock content %}
-            </div>
+            {% endblock content %}
         </div>
-
     </div>
+
 </div>
-{#</div>#}
+</div>
 
 
 </body>

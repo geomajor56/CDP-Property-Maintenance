@@ -13,6 +13,9 @@ class Building(models.Model):
     def __str__(self):
         return self.property_name
 
+    class Meta:
+        verbose_name = 'Property'
+
 
 class Unit(models.Model):
     building = models.ForeignKey(Building)
@@ -23,6 +26,9 @@ class Unit(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.building, self.unit)
+
+    class Meta:
+        verbose_name = 'Unit'
 
 
 class Tenant(models.Model):
@@ -39,6 +45,7 @@ def __str__(self):
 
 class Meta:
     ordering = ['last_name']
+    verbose_name = 'Tenant'
 
 
 class WorkOrder(models.Model):
@@ -61,18 +68,22 @@ class WorkOrder(models.Model):
         ('Other', 'Other'),
     )
 
-    building = models.ForeignKey(Building)
-    unit = models.ForeignKey(Unit)
-    ordernum = models.AutoField(primary_key=True)
-    priority = models.CharField(max_length=20, choices=PRIORITY, default='Not so urgent')
-    request_by = models.CharField(max_length=20, choices=REQUEST_BY, default='Resident')
-    call_date = models.DateField(blank=True)
-    problem_desc = models.TextField(blank=True)
-    complete_by = models.DateField(null=True, blank=True)
-    completed_by = models.TextField(max_length=25, choices=COMPLETED_BY, default='Staff')
-    completed = models.BooleanField(default=False, blank=True)
-    complete_date = models.DateField(null=True, blank=True, auto_now_add=False)
-    maint_comments = models.TextField(blank=True)
+    building = models.ForeignKey(Building, verbose_name='Property')
+    unit = models.ForeignKey(Unit, verbose_name='Unit')
+    ordernum = models.AutoField(primary_key=True, verbose_name='Order #')
+    priority = models.CharField(verbose_name='Priority', max_length=20, choices=PRIORITY, default='Not so urgent')
+    request_by = models.CharField(verbose_name='Requested By', max_length=20, choices=REQUEST_BY, default='Resident')
+    call_date = models.DateField(verbose_name='Call Date', blank=True)
+    problem_desc = models.TextField(verbose_name='Description', blank=True)
+    complete_by = models.DateField(verbose_name='Complete By', null=True, blank=True)
+    completed_by = models.TextField(verbose_name='Completed By', max_length=25, choices=COMPLETED_BY, default='Staff')
+    completed = models.BooleanField(verbose_name='Completed?', default=False, blank=True)
+    complete_date = models.DateField(verbose_name='Complete Date', null=True, blank=True, auto_now_add=False)
+    maint_comments = models.TextField(verbose_name='Comments', blank=True)
 
     def __str__(self):
         return '%s %s' % (self.building, self.unit)
+
+    class Meta:
+        verbose_name = 'Work Order'
+        verbose_name_plural = 'Work Orders'

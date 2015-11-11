@@ -1,0 +1,13 @@
+{% extends "cdpapp/base_no_side_panel.html" %}
+{% load render_table from django_tables2 %}
+{% load staticfiles %}
+{% block title %}All Work Orders{% endblock %}
+{#<head>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />#}
+{#    </head>#}
+{% block content %}
+
+
+{% render_table table %}
+
+{% endblock content %}

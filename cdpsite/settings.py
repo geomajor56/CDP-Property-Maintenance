@@ -11,7 +11,7 @@ SECRET_KEY = 'ep20kj03i3j$3+o+c*@kiv@o)2-#qe0)mit_^1@bb$fmrme_n3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+TEMPLATE_DEBUG = True
 
 
 ALLOWED_HOSTS = []
@@ -26,10 +26,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar.apps.DebugToolbarConfig',
     'cdpapp',
     'django_bootstrap_breadcrumbs',
+    'bootstrap3',
     'bootstrap3_datetime',
     'crispy_forms',
+    'django_tables2',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +55,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.core.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -60,6 +64,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'cdpsite.wsgi.application'
 

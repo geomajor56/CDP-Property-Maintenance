@@ -16,6 +16,7 @@
 {% block content %}
 <form method="POST"> {% csrf_token %}
     {{ form.as_p }}
+{#    {% crispy form %}#}
     <input class="btn btn-danger" type="submit" value="Submit">
 </form>
 {% endblock content %}
