@@ -15,6 +15,8 @@ class Building(models.Model):
 
     class Meta:
         verbose_name = 'Property'
+        verbose_name_plural = 'Properties'
+        ordering = ['property_name']
 
 
 class Unit(models.Model):
@@ -29,6 +31,8 @@ class Unit(models.Model):
 
     class Meta:
         verbose_name = 'Unit'
+        verbose_name_plural = 'Units'
+        ordering = ['unit']
 
 
 class Tenant(models.Model):

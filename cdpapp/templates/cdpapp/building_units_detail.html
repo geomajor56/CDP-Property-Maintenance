@@ -1,7 +1,12 @@
 {% extends "cdpapp/base_no_side_panel.html" %}
 {% block title %}Unit  Detail{% endblock %}
 
+{% load django_bootstrap_breadcrumbs %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Unit Detail" "cdpapp.views.BuildingUnitDetail()" %}
+{% endblock %}
 
 {% block content %}
     {#    <h3>building_units_detail.html</h3>#}

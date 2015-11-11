@@ -8,25 +8,19 @@
 
 {% block breadcrumbs %}
     {% clear_breadcrumbs %}
-    {% breadcrumb "Home" "/" %}
-    {% breadcrumb "Users and groups" "BuildingList" %}
+{#    {% breadcrumb "Building" "/" %}#}
+    {% breadcrumb "Buildings" "buildings" %}
 {% endblock %}
+
 
     {% block css %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css">
-{#        <link rel="stylesheet" href="{% static "css/maintapp.css" %}">#}
-
     {% endblock css %}
 
     {% block javascript %}
-        <!-- Latest JQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-        <!-- Latest compiled and minified JavaScript -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
     {% endblock javascript %}
-{#    {{ form.media }}#}
 
 </head>
 <body>
@@ -57,6 +51,12 @@
         </div>
     </nav>
 </div>
+
+
+<div class="container">
+ {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap3.html" %}
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -70,6 +70,7 @@
         <div class="col-md-9">
             <div id="content">
                 {% block content %}
+
 From then on, you can
                 {% endblock content %}
             </div>

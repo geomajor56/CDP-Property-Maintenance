@@ -49821,8 +49821,8 @@ umserver</columns>
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-state-number>312051</introspection-state-number>
-        <introspection-timestamp>2015-11-06.18:52:36.907</introspection-timestamp>
+        <introspection-state-number>312092</introspection-state-number>
+        <introspection-timestamp>2015-11-10.20:24:06.789</introspection-timestamp>
       </schema>
       <schema id="3" parent="1" name="pg_catalog">
         <object-id>11</object-id>
@@ -49908,7 +49908,7 @@ umserver</columns>
       </table>
       <table id="23" parent="2" name="cdpapp_building">
         <object-id>53308</object-id>
-        <state-number>312003</state-number>
+        <state-number>312092</state-number>
       </table>
       <table id="24" parent="2" name="cdpapp_tenant">
         <object-id>53319</object-id>
@@ -49916,11 +49916,11 @@ umserver</columns>
       </table>
       <table id="25" parent="2" name="cdpapp_unit">
         <object-id>53327</object-id>
-        <state-number>312003</state-number>
+        <state-number>312092</state-number>
       </table>
       <table id="26" parent="2" name="cdpapp_workorder">
         <object-id>53338</object-id>
-        <state-number>312003</state-number>
+        <state-number>312092</state-number>
       </table>
       <table id="27" parent="2" name="django_admin_log">
         <object-id>53493</object-id>
@@ -68074,13 +68074,11 @@ permission_id</columns>
       </key>
       <foreign-key id="3246" parent="24" name="cdpapp_tenant_unit_id_5279b19_fk_cdpapp_unit_id">
         <columns>#7</columns>
-        <ref-key>cdpapp_unit.cdpapp_unit_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <foreign-key id="3247" parent="24" name="cdpapp_tenant_building_id_1de707c0_fk_cdpapp_building_id">
         <columns>unit_id</columns>
-        <ref-key>cdpapp_building.cdpapp_building_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
@@ -68212,13 +68210,13 @@ permission_id</columns>
         <underlying-index>cdpapp_workorder_pkey</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="3274" parent="26" name="cdpapp_workorder_building_id_41574034_fk_cdpapp_building_id">
+      <foreign-key id="3274" parent="26" name="cdpapp_workorder_building_id_79db5f78_fk_cdpapp_building_id">
         <columns>building_id</columns>
         <ref-key>cdpapp_building.cdpapp_building_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="3275" parent="26" name="cdpapp_workorder_unit_id_2a7d3875_fk_cdpapp_unit_id">
+      <foreign-key id="3275" parent="26" name="cdpapp_workorder_unit_id_2dd0f5e1_fk_cdpapp_unit_id">
         <columns>unit_id</columns>
         <ref-key>cdpapp_unit.cdpapp_unit_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
