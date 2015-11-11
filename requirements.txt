@@ -1,0 +1,14 @@
+Django==1.8.5
+django-bootstrap-breadcrumbs==0.7.1
+django-bootstrap3==6.2.2
+django-bootstrap3-datetimepicker==2.2.3
+django-crispy-forms==1.5.2
+django-debug-toolbar==1.4
+django-flat-theme==1.1.1
+django-phonenumber-field==0.7.2
+django-tables2==1.0.4
+phonenumbers==7.1.1
+psycopg2==2.6.1
+six==1.10.0
+sqlparse==0.1.18
+Werkzeug==0.11
