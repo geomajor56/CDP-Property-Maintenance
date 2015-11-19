@@ -1,11 +1,5 @@
 {% load staticfiles %}
-{% load django_bootstrap_breadcrumbs %}
 
-{% block breadcrumbs %}
-    {% clear_breadcrumbs %}
-{#    {% breadcrumb "Building" "/" %}#}
-    {% breadcrumb "Buildings" "buildings" %}
-{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +11,7 @@
 
     {% block css %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css">
-        {#        <link rel="stylesheet" href="{% static "css/maintapp.css" %}">#}
+        <link rel="stylesheet" href="/cdpapp/css/cdpapp.css">
         <link rel="stylesheet" href="/static/django_tables2/themes/paleblue/css/screen.css"/>
     {% endblock css %}
 
@@ -29,7 +23,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     {% endblock javascript %}
-{#    {{ form.media }}#}
+    {#    {{ form.media }}#}
 
 </head>
 <body>
@@ -62,7 +56,7 @@
         </div>
     </nav>
 </div>
-{% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap3.html" %}
+{#{% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap3.html" %}#}
 <div class="container">
     <div class="col-md-12">
         <div id="content">

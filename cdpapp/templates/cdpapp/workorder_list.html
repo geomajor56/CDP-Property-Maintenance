@@ -1,6 +1,4 @@
 {% extends "cdpapp/base_no_side_panel.html" %}
-
-{% load floppyforms %}
 {% load render_table from django_tables2 %}
 {% load staticfiles %}
 {% block title %}All Work Orders{% endblock %}
@@ -8,13 +6,13 @@
 {#        <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />#}
 {#    </head>#}
 {% block content %}
-<div id="workorder-table" class="container">
+
     {% if workorder_list %}
-        <table class="table table-bordered table-condensed table-striped">
+        <table class="table table-striped">
             <tr>
                 <th>Property</th>
                 <th>Unit</th>
-                <th>Date Called</th>
+                <th>Dasdfte Called</th>
                 <th>Request</th>
                 <th>Description</th>
             </tr>
@@ -26,20 +24,21 @@
                     <td>{{ workorder.call_date }}</td>
                     <td>{{ workorder.request_by }}</td>
                     <td>{{ workorder.problem_desc |truncatewords:6 }}</td>
-                    <td><a href="{% url 'workorder_update' workorder.pk %}"><button type="button" class="btn btn-xs btn-success">Edit</button></a></td>
-                    <td>
-                        <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">
-                            {% csrf_token %}
-                         {{ form.as_p }}
-                            <input type="submit" class="btn btn-xs btn-danger" value="Delete"></input>
-                        </form>
-                    </td>
+{#                    <td><a href="{% url 'workorder_update' workorder.pk %}">#}
+{#                        <button type="button" class="btn btn-sm btn-success">Edit</button>#}
+{#                    </a></td>#}
+{#                    <td>#}
+{#                        <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">#}
+{#                            {% csrf_token %}#}
+{#                            <input type="submit" class="btn btn-sm btn-danger" value="Delete"></input>#}
+{#                        </form>#}
+{#                    </td>#}
                 </tr>
             {% endfor %}
         </table>
     {% endif %}
-    <p><a href="{% url 'workorder_add' %}">Create a new work order</a></p>
-</div>
+{#    <p><a href="{% url 'workorder_add' %}">Create a new work order</a></p>#}
+
     {#{% render_table table %}#}
 
 {% endblock content %}

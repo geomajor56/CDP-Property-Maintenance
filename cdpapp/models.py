@@ -89,5 +89,6 @@ class WorkOrder(models.Model):
         return '%s %s' % (self.building, self.unit)
 
     class Meta:
+        ordering = ['building', 'unit']
         verbose_name = 'Work Order'
         verbose_name_plural = 'Work Orders'
