@@ -88,6 +88,10 @@ class WorkOrder(models.Model):
     def __str__(self):
         return '%s %s' % (self.building, self.unit)
 
+    @property
+    def checkbox_character(self):
+        return '☑' if self.complete else '☐'
+
     class Meta:
         ordering = ['building', 'unit']
         verbose_name = 'Work Order'
