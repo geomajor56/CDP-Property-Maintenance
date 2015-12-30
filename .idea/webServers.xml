@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="281be76b-6c11-4356-a151-9714e3a3f728" name="cdpmaint-pythonanywhere" url="http://cdpmaint@ssh.pythonanywhere.com">
+        <fileTransfer host="cdpmaint@ssh.pythonanywhere.com" port="22" accessType="SFTP" username="cdpmaint">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

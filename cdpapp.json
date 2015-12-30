@@ -1,0 +1,473 @@
+[
+  {
+    "pk": 1,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Eastham",
+      "state": "MA",
+      "building_comments": "comments fro 885 Property",
+      "address": "123 Main",
+      "property_name": "885",
+      "zip": "02642"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Harwich",
+      "state": "MA",
+      "building_comments": "building comments for 836",
+      "address": "123 main",
+      "property_name": "836 Little Homestead",
+      "zip": "01235"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Provincetown",
+      "state": "MA",
+      "building_comments": "",
+      "address": "27 Nelson",
+      "property_name": "27 Nelson",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 4,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Provincetown",
+      "state": "MA",
+      "building_comments": "",
+      "address": "58 Harry Kemp Way",
+      "property_name": "Harry Kemp",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 5,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Truro",
+      "state": "MA",
+      "building_comments": "",
+      "address": "14 Old Firehouse Road",
+      "property_name": "Old Firehouse Road",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 6,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Eastham",
+      "state": "MA",
+      "building_comments": "",
+      "address": "1425 Nauset Road",
+      "property_name": "1425 Nauset",
+      "zip": "02642"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Eastham",
+      "state": "MA",
+      "building_comments": "",
+      "address": "1475 State Highway",
+      "property_name": "1475",
+      "zip": "02642"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Brewster",
+      "state": "MA",
+      "building_comments": "",
+      "address": "3550 Maint Street Unit 7",
+      "property_name": "Nickerson",
+      "zip": "02631"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Eastham",
+      "state": "MA",
+      "building_comments": "",
+      "address": "17-19 Robert Lane",
+      "property_name": "Robert Lane",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 10,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Orleans",
+      "state": "MA",
+      "building_comments": "",
+      "address": "71 Canal Road",
+      "property_name": "Canal House",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 11,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Truro",
+      "state": "MA",
+      "building_comments": "",
+      "address": "53 Shore Road",
+      "property_name": "Shore Road",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 12,
+    "model": "cdpapp.building",
+    "fields": {
+      "town": "Truro",
+      "state": "MA",
+      "building_comments": "",
+      "address": "6 Helens Way",
+      "property_name": "Helens Way",
+      "zip": ""
+    }
+  },
+  {
+    "pk": 1,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "Main House",
+      "building": 1,
+      "bathrooms": "1.0",
+      "unit_comments": "DoesNotExist: Question matching query does not exist.\r\n\r\n# Lookup by a primary key is the most common case, so Django provides a\r\n# shortcut for primary-key exact lookups.\r\n# The following is identical to Question.objects.get(id=1).\r\n>>> Question.objects.get(pk=1)\r\n<Question: What's up?>\r\n\r\n# Make sure our custom method worked.\r\n>>> q = Question.objects.get(pk=1)\r\n>>> q.was_published_recently()\r\nTrue\r\n\r\n# Give the Question a couple of Choices. The create call constructs a new\r\n# Choice object, does the INSERT statement, adds the choice to the set\r\n# of available choices and returns the new Choice object. Django creates\r\n# a set to hold the \"other side\" of a ForeignKey relation\r\n# (e.g. a question's choice) which can be accessed via the API.\r\n>>> q = Question.objects.get(pk=1)"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "Cottage A",
+      "building": 1,
+      "bathrooms": "1.0",
+      "unit_comments": "comments for cottage a"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "1",
+      "building": 2,
+      "bathrooms": "1.0",
+      "unit_comments": "unit 1 comments"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "2",
+      "building": 2,
+      "bathrooms": "1.0",
+      "unit_comments": "unit 2 comments"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "Cottage B",
+      "building": 1,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 6,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "Cottage C",
+      "building": 1,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 7,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "Cottage D",
+      "building": 1,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 8,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 2,
+      "unit": "House",
+      "building": 3,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 9,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 2,
+      "unit": "B",
+      "building": 3,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 10,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "58-1",
+      "building": 4,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 11,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "58-2",
+      "building": 4,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 12,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "58-3",
+      "building": 4,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 13,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 1,
+      "unit": "58-4",
+      "building": 4,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 14,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 4,
+      "unit": "Main House",
+      "building": 5,
+      "bathrooms": "2.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 15,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 2,
+      "unit": "Main House",
+      "building": 6,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 16,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 2,
+      "unit": "6A",
+      "building": 12,
+      "bathrooms": "1.5",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 17,
+    "model": "cdpapp.unit",
+    "fields": {
+      "bedrooms": 2,
+      "unit": "6B",
+      "building": 12,
+      "bathrooms": "1.0",
+      "unit_comments": ""
+    }
+  },
+  {
+    "pk": 1,
+    "model": "cdpapp.tenant",
+    "fields": {
+      "unit": 1,
+      "building": 1,
+      "last_name": "Streete",
+      "email": "tenant@gmail.com",
+      "first_name": "Elizabeth"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "cdpapp.tenant",
+    "fields": {
+      "unit": 3,
+      "building": 2,
+      "last_name": "Doe",
+      "email": "tenant@gmail.com",
+      "first_name": "Jane"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "cdpapp.tenant",
+    "fields": {
+      "unit": 3,
+      "building": 2,
+      "last_name": "Doe",
+      "email": "tenant@gmail.com",
+      "first_name": "John "
+    }
+  },
+  {
+    "pk": 4,
+    "model": "cdpapp.tenant",
+    "fields": {
+      "unit": 4,
+      "building": 2,
+      "last_name": "Lady",
+      "email": "tenant@gmail.com",
+      "first_name": "Crazy"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "cdpapp.tenant",
+    "fields": {
+      "unit": 4,
+      "building": 2,
+      "last_name": "Cat",
+      "email": "tenant@gmail.com",
+      "first_name": "Crazy lady's"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "cdpapp.workorder",
+    "fields": {
+      "request_by": "Resident",
+      "problem_desc": "A dictionary containing the settings for all databases to be used with Django. It is a nested dictionary whose contents map a database alias to a dictionary containing the options for an individual database.\r\n\r\nThe DATABASES setting must configure a default database; any number of additional databases may also be specified.\r\n\r\nThe simplest possible settings file is for a single-database setup using SQLite. This can be configured using the following:",
+      "building": 1,
+      "completed": false,
+      "completed_by": "Staff",
+      "priority": "Not so urgent",
+      "call_date": "2015-10-12",
+      "unit": 1,
+      "complete_date": null,
+      "maint_comments": "",
+      "complete_by": "2015-11-23"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "cdpapp.workorder",
+    "fields": {
+      "request_by": "Resident",
+      "problem_desc": "DATABASES\u00b6\r\n\r\nDefault: {} (Empty dictionary)\r\n\r\nA dictionary containing the settings for all databases to be used with Django. It is a nested dictionary whose contents map a database alias to a dictionary containing the options for an individual database.\r\n",
+      "building": 1,
+      "completed": false,
+      "completed_by": "Staff",
+      "priority": "Not so urgent",
+      "call_date": "2015-11-04",
+      "unit": 2,
+      "complete_date": null,
+      "maint_comments": "",
+      "complete_by": "2015-11-26"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "cdpapp.workorder",
+    "fields": {
+      "request_by": "Resident",
+      "problem_desc": "DATABASES\u00b6\r\n\r\nDefault: {} (Empty dictionary)\r\n\r\nA dictionary containing the settings for all databases to be used with Django. It is a nested dictionary whose contents map a database alias to a dictionary containing the options for an individual database.\r\n",
+      "building": 1,
+      "completed": false,
+      "completed_by": "Staff",
+      "priority": "Not so urgent",
+      "call_date": "2015-11-04",
+      "unit": 2,
+      "complete_date": null,
+      "maint_comments": "",
+      "complete_by": "2015-11-26"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "cdpapp.workorder",
+    "fields": {
+      "request_by": "Resident",
+      "problem_desc": "DATABASES\u00b6\r\n\r\nDefault: {} (Empty dictionary)\r\n\r\nA dictionary containing the settings for all databases to be used with Django. It is a nested dictionary whose contents map a database alias to a dictionary containing the options for an individual database.\r\n\r\nThe DATABASES setting must configure a default database; any number of additional databases may also be specified.\r\n\r\nThe simplest possible settings file is for a single-database setup using SQLite. This can be configured using the following:",
+      "building": 1,
+      "completed": true,
+      "completed_by": "Staff",
+      "priority": "Not so urgent",
+      "call_date": "2015-11-04",
+      "unit": 4,
+      "complete_date": "2015-11-04",
+      "maint_comments": "all done",
+      "complete_by": "2015-11-03"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "cdpapp.workorder",
+    "fields": {
+      "request_by": "Resident",
+      "problem_desc": "zxfsdafsafsadf",
+      "building": 2,
+      "completed": false,
+      "completed_by": "Staff",
+      "priority": "Not so urgent",
+      "call_date": "2015-11-04",
+      "unit": 4,
+      "complete_date": null,
+      "maint_comments": "",
+      "complete_by": null
+    }
+  }
+]

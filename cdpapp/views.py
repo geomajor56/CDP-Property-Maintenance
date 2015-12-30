@@ -1,16 +1,30 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect, request
-from django.shortcuts import redirect
-from django.http import JsonResponse
-from django_tables2 import RequestConfig
-from cdpapp.tables import WorkOrderTable
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from cdpapp.models import Building, Unit, WorkOrder
 from cdpapp.forms import WorkOrderForm
 
 from vanilla import CreateView, DeleteView, ListView, UpdateView
+
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
+
+
+def some_view(request):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
+
+    # Create the PDF object, using the response object as its "file."
+    p = canvas.Canvas(response)
+
+    # Draw things on the PDF. Here's where the PDF generation happens.
+    # See the ReportLab documentation for the full list of functionality.
+    p.drawString(10, 400,
+                 "Hello  world.")
+
+    # Close the PDF object cleanly, and we're done.
+    p.showPage()
+    p.save()
+    return response
 
 
 class BuildingList(ListView):
@@ -57,7 +71,8 @@ class DeleteWorkOrder(DeleteView):
 
 
 # class CreateWorkOrder(CreateView):
-#     template_name = 'cdpapp/workorder_form.html'
+# template_name = 'cdpapp/workorder_form.html'
+
 #     model = WorkOrder
 #     form_class = WorkOrderForm
 #

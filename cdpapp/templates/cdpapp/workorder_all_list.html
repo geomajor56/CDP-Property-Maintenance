@@ -1,45 +1,52 @@
 {% extends "cdpapp/base_no_side_panel.html" %}
-
-{% load floppyforms %}
-{% load render_table from django_tables2 %}
+{% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block title %}All Work Orders{% endblock %}
-{#<head>#}
-{#        <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />#}
-{#    </head>#}
-{% block content %}
-<div id="workorder-table" class="container">
-    {% if workorder_list %}
-        <table class="table table-bordered table-condensed table-striped">
-            <tr>
-                <th>Property</th>
-                <th>Unit</th>
-                <th>Date Called</th>
-                <th>Request</th>
-                <th>Description</th>
-            </tr>
 
-            {% for workorder  in workorder_list %}
+{% block content %}
+    <div id="workorder-table" class="container">
+        {% if workorder_list %}
+            <table class="table table-bordered table-condensed table-striped">
                 <tr>
-                    <td>{{ workorder.building }}</td>
-                    <td>{{ workorder.unit }}</td>
-                    <td>{{ workorder.call_date }}</td>
-                    <td>{{ workorder.request_by }}</td>
-                    <td>{{ workorder.problem_desc |truncatewords:6 }}</td>
-                    <td><a href="{% url 'workorder_update' workorder.pk %}"><button type="button" class="btn btn-xs btn-success">Edit</button></a></td>
-                    <td>
-                        <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">
-                            {% csrf_token %}
-                         {{ form.as_p }}
-                            <input type="submit" class="btn btn-xs btn-danger" value="Delete"></input>
-                        </form>
-                    </td>
+                    <th>Property</th>
+                    <th>Unit</th>
+                    <th>Date Called</th>
+                    <th>Request</th>
+                    <th>Description</th>
+                    <th>Completed</th>
+                    <th>Complete Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
-            {% endfor %}
-        </table>
-    {% endif %}
-    <p><a href="{% url 'workorder_add' %}">Create a new work order</a></p>
-</div>
-    {#{% render_table table %}#}
+
+                {% for workorder  in workorder_list %}
+                    <tr>
+                        <td>{{ workorder.building }}</td>
+                        <td>{{ workorder.unit }}</td>
+                        <td>{{ workorder.call_date }}</td>
+                        <td>{{ workorder.request_by }}</td>
+                        <td>{{ workorder.problem_desc |truncatewords:10   }}</td>
+                        <td>{{ workorder.completed }}</td>
+                        <td>{{ workorder.complete_date }}</td>
+                        <td><a href="{% url 'workorder_update' workorder.pk %}">
+                            <button type="button" class="btn btn-xs btn-success">Edit</button>
+                        </a></td>
+                        <td>
+                            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                            <form method="POST" action="{% url 'workorder_delete' workorder.pk %}">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete"></input>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <p><a href="{% url 'workorder_add' %}">Create a new work order</a></p>
+    <button class="btn btn-default pull-right" name="pdf" type="submit">Print Workorders</button>
+
+    </div>
+
 
 {% endblock content %}

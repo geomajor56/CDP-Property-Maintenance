@@ -11,8 +11,8 @@
 
     {% block css %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css">
-        <link rel="stylesheet" href="/cdpapp/css/cdpapp.css">
-        <link rel="stylesheet" href="/static/django_tables2/themes/paleblue/css/screen.css"/>
+{#        <link rel="stylesheet" href="/cdpapp/css/cdpapp.css">#}
+{#        <link rel="stylesheet" href="/static/django_tables2/themes/paleblue/css/screen.css"/>#}
     {% endblock css %}
 
     {% block javascript %}
@@ -23,7 +23,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     {% endblock javascript %}
-    {#    {{ form.media }}#}
+{#        {{ form.media }}#}
 
 </head>
 <body>
@@ -45,8 +45,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/tenants/all/">Tenants</a></li>
-                <li><a href="/unit/">Units</a></li>
+{#                <li><a href="/tenants/all/">Tenants</a></li>#}
+{#                <li><a href="/unit/">Units</a></li>#}
                 {#                <li><a href="/workorder/all">Work Orders</a></li>#}
                 <li><a href="{% url 'list_all_workorders' %}">Work Orders</a>
 
